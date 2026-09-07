@@ -15,6 +15,7 @@ namespace EE
     Engine::Engine( TFunction<bool( EE::String const& error )>&& errorHandler )
         : m_fatalErrorHandler( errorHandler )
     {
+        EE_ASSERT( m_modules.empty() ); // m_modules[0] must be BaseModule and m_modules[1] must be EngineModule
         m_modules.emplace_back( EE::New<BaseModule>() );
         m_modules.emplace_back( EE::New<EngineModule>() );
     }

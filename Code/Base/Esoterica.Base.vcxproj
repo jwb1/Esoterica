@@ -615,7 +615,11 @@
     <ClCompile Include="ThirdParty\stb\stb_Esoterica.cpp" />
     <ClCompile Include="Threading\TaskSystem.cpp" />
     <ClCompile Include="ThirdParty\EA\eastl_Esoterica.cpp" />
-    <ClCompile Include="ThirdParty\rpmalloc\rpmalloc.c" />
+    <ClCompile Include="ThirdParty\rpmalloc\rpmalloc.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4255;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Shipping|x64'">4255;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4255;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
     <ClCompile Include="ThirdParty\D3D12MemoryAllocator\Common.cpp" />
     <ClCompile Include="ThirdParty\D3D12MemoryAllocator\D3D12MemAlloc.cpp" />
     <ClCompile Include="Threading\Threading.cpp" />

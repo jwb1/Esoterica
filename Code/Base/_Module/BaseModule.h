@@ -25,7 +25,7 @@ namespace EE
 
         BaseModule();
 
-        ModuleContext GetModuleContext() const;
+        ModuleContext GetModuleContext();
 
         virtual bool InitializeModule( ModuleContext const& context ) override;
         virtual void ShutdownModule( ModuleContext const& context ) override;

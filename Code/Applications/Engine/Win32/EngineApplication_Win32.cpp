@@ -110,7 +110,7 @@ namespace EE
 
 //-------------------------------------------------------------------------
 
-int APIENTRY _tWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow )
+extern "C" int APIENTRY WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, char* lpCmdLine, int nCmdShow )
 {
     int result = 0;
     {

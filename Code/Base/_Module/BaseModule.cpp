@@ -76,16 +76,14 @@ namespace EE
         , m_resourceSystem( m_taskSystem )
     {}
 
-    ModuleContext BaseModule::GetModuleContext() const
+    ModuleContext BaseModule::GetModuleContext()
     {
-        BaseModule* mutableModule = const_cast<BaseModule*>( this );
-
         ModuleContext moduleContext;
-        moduleContext.m_pTaskSystem = &mutableModule->m_taskSystem;
-        moduleContext.m_pTypeRegistry = &mutableModule->m_typeRegistry;
-        moduleContext.m_pSettingsRegistry = &mutableModule->m_settingsRegistry;
-        moduleContext.m_pResourceSystem = &mutableModule->m_resourceSystem;
-        moduleContext.m_pSystemRegistry = &mutableModule->m_systemRegistry;
+        moduleContext.m_pTaskSystem = &m_taskSystem;
+        moduleContext.m_pTypeRegistry = &m_typeRegistry;
+        moduleContext.m_pSettingsRegistry = &m_settingsRegistry;
+        moduleContext.m_pResourceSystem = &m_resourceSystem;
+        moduleContext.m_pSystemRegistry = &m_systemRegistry;
         return moduleContext;
     }
 
